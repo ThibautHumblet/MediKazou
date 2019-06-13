@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      margin: 15px;
+    }
+
+    button {
+      height: 30px;
+      width: 30px;
+      outline: none;
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="algemeen">
+    <h1>Opties Kazou autofill medische fiche</h1>
+    <h2>Algemeen</h2>
+    <form>
+
+      <h3>Persoon 1 die we kunnen bereiken in geval van nood</h3>
+      <p>Voornaam en naam</p>
+      <input type="text" name="p1Name"><br>
+      <p>Adres (straat, huisnummer, postcode en gemeente)</p>
+      <input type="text" name="p1Street"><br>
+      <p>Telefoonnummer (GSM)</p>
+      <input type="text" name="p1Number"><br>
+      <p>Relatie tot jou</p>
+      <input type="text" name="p1Relation"><br>
+
+      <h3>Persoon 2 die we kunnen bereiken in geval van nood</h3>
+      <p>Voornaam en naam</p>
+      <input type="text" name="p2Name"><br>
+      <p>Adres (straat, huisnummer, postcode en gemeente)</p>
+      <input type="text" name="p2Street"><br>
+      <p>Telefoonnummer (GSM)</p>
+      <input type="text" name="p2Number"><br>
+      <p>Relatie tot jou</p>
+      <input type="text" name="p2Relation"><br>
+
+      <h3>Huisarts</h3>
+      <p>Naam</p>
+      <input type="text" name="drName"><br>
+      <p>Telefoonnummer</p>
+      <input type="text" name="drNumber"><br>
+    </form>
+  </div>
+  <div>
+    <h2>Dieetinfo</h2>
+    <form id="voedingsAllergie">
+      <p>Ben je allergisch of intolerant aan bepaalde voedingsmiddelen?
+        Zoals bijvoorbeeld: noten, kiwi, steenvruchten, eieren, schaaldieren, ...</p>
+      <input type="radio" name="voedingsAllergieNee" value="0" checked> Nee<br>
+      <input type="radio" name="voedingsAllergieJa" value="1"> Ja<br>
+    </form>
+    <form id="andereAllergie">
+      <p>
+        Ben je allergisch of intolerant aan andere zaken, die geen voeding zijn?
+        Zoals bijvoorbeeld: pollen, grassen, medicatie, ... ...</p>
+      <input type="radio" name="gender" value="0" checked> Nee<br>
+      <input type="radio" name="gender" value="1"> Ja<br>
+    </form>
+    <form>
+      <p>Moet je een specifiek dieet/voedingspatroon volgen, of zijn er andere zaken waar we rekening mee moeten houden
+        voor het eten?
+        Zoals bijvoorbeeld: vegetarisch, veganistisch, diabetes, glutenvrij, lactosevrij, zoutarm, cholesterolarm,
+        vetarm, darmsparend, halal, ...</p>
+      <input type="radio" name="gender" value="0" checked> Nee<br>
+      <input type="radio" name="gender" value="1"> Ja<br>
+    </form>
+    <form>
+      <p>
+        Heb je een aandachtspunt of aandoening waar we rekening mee moeten houden of van op de hoogte moeten zijn?
+        Zoals bijvoorbeeld autisme, ADHD, ADD, astma, diabetes, epilepsie, hartproblemen, psychische problemen, ...</p>
+      <input type="radio" name="gender" value="0" checked> Nee<br>
+      <input type="radio" name="gender" value="1"> Ja<br>
+    </form>
+  </div>
+  <div>
+    <h2>Laatste gegevens</h2>
+    Gebruik je specifieke geneesmiddelen?
+Ja
+Nee
+Welke ernstige ziekten, breuken of heelkundige ingrepen (+jaartal) heb je reeds gehad?
+Welke ernstige ziekten, breuken of heelkundige ingrepen (+jaartal) heb je reeds gehad?
+  </div>
+</body>
+<script src="options.js"></script>
+
+</html>
