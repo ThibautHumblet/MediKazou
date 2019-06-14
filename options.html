@@ -13,10 +13,23 @@
       outline: none;
       margin: 10px;
     }
+
+    .savebutton {
+      width: auto;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    input {
+      font-size: 17px;
+    }
   </style>
 </head>
 
 <body>
+  <form id="medischeFiche">
   <div class="algemeen">
     <h1>Opties Kazou autofill medische fiche</h1>
     <h2>Algemeen</h2>
@@ -50,44 +63,225 @@
     </form>
   </div>
   <div>
+
     <h2>Dieetinfo</h2>
+
     <form id="voedingsAllergie">
+      <h3>Voedingsallergie</h3>
       <p>Ben je allergisch of intolerant aan bepaalde voedingsmiddelen?
         Zoals bijvoorbeeld: noten, kiwi, steenvruchten, eieren, schaaldieren, ...</p>
-      <input type="radio" name="voedingsAllergieNee" value="0" checked> Nee<br>
-      <input type="radio" name="voedingsAllergieJa" value="1"> Ja<br>
+      <input type="radio" name="voedingsAllergie" value="0" checked> Nee<br>
+      <input type="radio" name="voedingsAllergie" value="1"> Ja<br>
     </form>
+
+    <div id="voedingsAllergieExtra" class="hidden">
+      <p>Je gaf aan dat je allergisch / intolerant bent aan bepaalde voedingsmiddelen. Hieronder kan je dit verder
+        specificeren.</p>
+      <ul>
+        <li>
+          Wij vragen om je dieet/voedingsvoorkeur van zo helder mogelijk te omschrijven en te verduidelijken met enkele
+          voorbeelden, zo hebben we een concreet beeld van de noden.
+        </li>
+        <li>
+          Kazou doet zijn uiterste best om onze centra te overtuigen aanpassingen te doen. Er kan echter gevraagd worden
+          om bepaalde voedingsmiddelen zelf mee te brengen.
+        </li>
+        <li>
+          Bij complexe diëten kan gevraagd worden om een duidelijke omschrijving in de taal van de bestemming (Engels,
+          Frans of Duits) te bezorgen. De verantwoordelijkheid voor de vertaling ligt hiervoor bij jezelf. Een correct
+          en volledig document is hierbij essentieel om de correcte maaltijden te kunnen voorzien.
+        </li>
+      </ul>
+
+      <form>
+        <p>Aan welke voedingsmiddelen ben je allergisch / intolerant?
+          Zoals bijvoorbeeld: noten, kiwi, steenvruchten, eieren, schaaldieren, ... (Vereist)</p>
+        <textarea name="gedetailleerdeVoedingsAllergie" rows="6" cols="80"></textarea>
+      </form>
+
+      <form id="ernstVoedingsAllergie">
+        <p>Wat is de ernst van deze allergie / intolerantie?</p>
+        <input type="radio" name="ernstVoedingsAllergie" value="0" checked> Last bij grote hoeveelheden, maar in kleine
+        hoeveelheden (bijvoorbeeld verwerkt in sauzen) kan het geen kwaad<br>
+        <input type="radio" name="ernstVoedingsAllergie" value="1"> Last bij kleine hoeveelheden, maar niet
+        levensbedreigend<br>
+        <input type="radio" name="ernstVoedingsAllergie" value="2"> Levensbedreigend vanaf kleine hoeveelheden<br>
+        <input type="radio" name="ernstVoedingsAllergie" value="3"> Ander (gelieve te specificeren)<br>
+        <div id="ernstVoedingsAllergieSpecifiek" class="hidden">
+          <textarea name="ernstVoedingsAllergieSpecifiek" rows="3" cols="80"></textarea>
+        </div>
+      </form>
+      <form>
+        <p>Indien je toch in contact komt met deze stoffen, wat gebeurt er dan en hoe spelen je mede-vrijwilligers hier
+          best op in?</p>
+        <textarea name="inspelenVoedingsAllergie" rows="6" cols="80"></textarea>
+      </form>
+
+      </form>
+
+
+    </div>
     <form id="andereAllergie">
+      <h3>Allergie aan andere stoffen</h3>
       <p>
         Ben je allergisch of intolerant aan andere zaken, die geen voeding zijn?
         Zoals bijvoorbeeld: pollen, grassen, medicatie, ... ...</p>
-      <input type="radio" name="gender" value="0" checked> Nee<br>
-      <input type="radio" name="gender" value="1"> Ja<br>
+      <input type="radio" name="andereAllergie" value="0" checked> Nee<br>
+      <input type="radio" name="andereAllergie" value="1"> Ja<br>
     </form>
+    <div id="andereAllergieExtra" class="hidden">
+      <p>Je gaf aan dat je allergisch / intolerant is aan bepaalde stoffen, die geen voeding zijn. Hieronder kan je dit
+        verder specificeren.</p>
+      <form>
+        <p> Aan welke stoffen ben je allergisch?
+          Zoals bijvoorbeeld: pollen, grassen, medicatie, </p>
+        <textarea name="gedetailleerdeAndereAllergie" rows="6" cols="80"></textarea>
+      </form>
+
+      <form id="ernstAndereAllergie">
+        <p>Wat is de ernst van deze allergie?</p>
+        <input type="radio" name="ernstAndereAllergie" value="0" checked> Soms last, maar neemt medicatie om dit tegen
+        te gaan<br>
+        <input type="radio" name="ernstAndereAllergie" value="1"> Soms lichte last, maar niet ernstig<br>
+        <input type="radio" name="ernstAndereAllergie" value="2"> Ernstige last, maar niet levensbedreigend<br>
+        <input type="radio" name="ernstAndereAllergie" value="3"> Levensbedreigend<br>
+        <input type="radio" name="ernstAndereAllergie" value="4"> Ander (gelieve te specificeren)<br>
+        <div id="ernstAndereAllergieSpecifiek" class="hidden">
+          <textarea name="ernstAndereAllergieSpecifiek" rows="5" cols="80"></textarea>
+        </div>
+      </form>
+      <form>
+        <p>Indien je toch in contact komt met deze stoffen, wat gebeurt er dan en hoe spelen je mede-vrijwilligers hier
+          best op in?</p>
+        <textarea name="inspelenAndereAllergie" rows="6" cols="80"></textarea>
+      </form>
+
+    </div>
+
     <form>
+      <h3>Dieet</h3>
       <p>Moet je een specifiek dieet/voedingspatroon volgen, of zijn er andere zaken waar we rekening mee moeten houden
         voor het eten?
         Zoals bijvoorbeeld: vegetarisch, veganistisch, diabetes, glutenvrij, lactosevrij, zoutarm, cholesterolarm,
         vetarm, darmsparend, halal, ...</p>
-      <input type="radio" name="gender" value="0" checked> Nee<br>
-      <input type="radio" name="gender" value="1"> Ja<br>
+      <input type="radio" name="dieet" value="0" checked> Nee<br>
+      <input type="radio" name="dieet" value="1"> Ja<br>
     </form>
+    <div id="dieetExtra" class="hidden">
+      <p>Je gaf aan dat je een specifiek dieet / voedingspatroon dient te volgen. Hieronder kan je dit verder
+        specificeren.</p>
+      <ul>
+        <li>
+          Wij vragen om je dieet/voedingsvoorkeur van zo helder mogelijk te omschrijven en te verduidelijken met enkele
+          voorbeelden, zo hebben we een concreet beeld van de noden.
+        </li>
+        <li>
+          Kazou doet zijn uiterste best om onze centra te overtuigen aanpassingen te doen. Er kan echter gevraagd worden
+          om
+          bepaalde voedingsmiddelen zelf mee te brengen.
+        </li>
+        <li>
+          Bij complexe diëten kan gevraagd worden om een duidelijke omschrijving in de taal van de bestemming (Engels,
+          Frans
+          of Duits) te bezorgen. De verantwoordelijkheid voor de vertaling ligt hiervoor bij jezelf. Een correct en
+          volledig
+          document is hierbij essentieel om de correcte maaltijden te kunnen voorzien.
+        </li>
+      </ul>
+      <form>
+        <p>Je gaf aan dat je een specifiek dieet / voedingspatroon dient te volgen. Specificeer.</p>
+        <input type="checkbox" name="specifiekDieet" value="vegetarisch"> Vegetarisch (ik eet geen vis of vlees) <br>
+        <input type="checkbox" name="specifiekDieet" value="vegetarischVis"> Vegetarisch (ik eet wel vis, geen vlees)
+        <br>
+        <input type="checkbox" name="specifiekDieet" value="veganistisch"> Veganistisch (ik eet geen vlees, vis, eieren,
+        melk, honing, ...) <br>
+        <input type="checkbox" name="specifiekDieet" value="diabetes"> Diabetes <br>
+        <input type="checkbox" name="specifiekDieet" value="glutenvrij"> Glutenvrij <br>
+        <input type="checkbox" name="specifiekDieet" value="lactosearm"> Lactosearm (verwerkt in bijvoorbeeld sauzen mag
+        wel) <br>
+        <input type="checkbox" name="specifiekDieet" value="lactosevrij"> Lactosevrij (ook niet verwerkt in bijvoorbeeld
+        sauzen) <br>
+        <input type="checkbox" name="specifiekDieet" value="zoutarm"> Zoutarm <br>
+        <input type="checkbox" name="specifiekDieet" value="cholesterolarm"> Cholesterolarm <br>
+        <input type="checkbox" name="specifiekDieet" value="vetarm"> Vetarm <br>
+        <input type="checkbox" name="specifiekDieet" value="darmsparend"> Darmsparend <br>
+        <input type="checkbox" name="specifiekDieet" value="halal"> Halal <br>
+        <input type="checkbox" name="specifiekDieet" value="ander"> Ander (gelieve te specificeren): <br>
+        <textarea name="anderDieet" rows="5" cols="80"></textarea>
+      </form>
+      <form>
+        <p> Gelieve te verduidelijken via onderstaand tekstvak welke specifieke zaken je wel of niet mag eten, of door
+          een
+          bestand te uploaden. (Bestand uploaden gaat niet met deze tool dus alles moet je hier toevoegen of je bestand
+          nadien handmatig
+          toevoegen.)</p>
+        <textarea name="specifiekeZakenDieet" rows="6" cols="80"></textarea>
+      </form>
+    </div>
+
     <form>
+      <h3>Aandachtspunten</h3>
       <p>
         Heb je een aandachtspunt of aandoening waar we rekening mee moeten houden of van op de hoogte moeten zijn?
         Zoals bijvoorbeeld autisme, ADHD, ADD, astma, diabetes, epilepsie, hartproblemen, psychische problemen, ...</p>
-      <input type="radio" name="gender" value="0" checked> Nee<br>
-      <input type="radio" name="gender" value="1"> Ja<br>
+      <input type="radio" name="aandachtspunt" value="0" checked> Nee<br>
+      <input type="radio" name="aandachtspunt" value="1"> Ja<br>
     </form>
+    <div id="aandachtspuntExtra" class="hidden">
+      <form>
+        <p> Je gaf aan dat je een aandachtspunt of medische aandoening hebt? Gelieve dat hieronder te specificeren.
+          Heb je een specifieke medische aandoening of aandachtspunt waar we meer over dienen te weten? Beschrijf deze
+          dan
+          hieronder en geef zeker de info mee die noodzakelijk is in geval van nood.</p>
+        <textarea name="aandachtspuntSpecifiek" rows="6" cols="80"></textarea>
+      </form>
+    </div>
   </div>
+
   <div>
     <h2>Laatste gegevens</h2>
-    Gebruik je specifieke geneesmiddelen?
-Ja
-Nee
-Welke ernstige ziekten, breuken of heelkundige ingrepen (+jaartal) heb je reeds gehad?
-Welke ernstige ziekten, breuken of heelkundige ingrepen (+jaartal) heb je reeds gehad?
+    <p>Gebruik je specifieke geneesmiddelen?</p>
+    <input type="radio" name="geneesmiddel" value="0" checked> Nee<br>
+    <input type="radio" name="geneesmiddel" value="1"> Ja<br>
+    <div id="geneesmiddelExtra" class="hidden">
+      <p>
+        Aangezien het innemen van geneesmiddelen vaak voor kortere periode is, is het toevoegen hiervan in deze
+        plugin uitgeschakeld. Indien hier toch vraag naar is, kan dit in een volgende update toegevoegd worden.
+      </p>
+    </div>
+    <form>
+    <p>Welke ernstige ziekten, breuken of heelkundige ingrepen (+jaartal) heb je reeds gehad?</p>
+    <textarea name="anderDieet" rows="5" cols="80"></textarea>
+    <p>Werd je gevaccineerd tegen tetanus/klem?</p>
+    <input type="radio" name="gevaccineerd" value="0" checked> Nee<br>
+    <input type="radio" name="gevaccineerd" value="1"> Ja<br>
+    <p>
+      Zo ja, in welk jaar?
+    </p>
+    <input type="text" name="tetanusJaar"><br>
+    </form>
+<form>
+<p>
+      Bij welk ziekenfonds ben je aangesloten?
+</p>
+<input type="radio" name="ziekenfonds" value="0" checked> CM (Christelijke Mutualiteit)<br>
+<input type="radio" name="ziekenfonds" value="1"> Bond Moyson<br>
+<input type="radio" name="ziekenfonds" value="2"> De VoorZorg<br>
+<input type="radio" name="ziekenfonds" value="3"> Liberale Mutualiteit<br>
+<input type="radio" name="ziekenfonds" value="4"> OZ<br>
+<input type="radio" name="ziekenfonds" value="5"> Partena<br>
+<input type="radio" name="ziekenfonds" value="6"> Socialistische Mutualiteiten<br>
+<input type="radio" name="ziekenfonds" value="7"> Symbio<br>
+<input type="radio" name="ziekenfonds" value="8"> VNZ (Vlaams & Neutraal ziekenfonds)<br>
+<input type="radio" name="ziekenfonds" value="9"> Ander (gelieve te specificeren)<br>
+<div id="ziekenfondsAnders" class="hidden">
+    <input type="text" name="ziekenfondsAnders"><br>
+</div>
+</form>
+
   </div>
+  <button class="savebutton" id="knopOpslaan">Opslaan</button>
+</form>
 </body>
 <script src="options.js"></script>
 
